@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toros Hub UTCJ PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#006532">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1> 🐂Toros Hub</h1> 
+            <p>Universidad Tecnológica de Ciudad Juárez</p>
+        </header>
+
+        <main>
+            <section class="news-section">
+                <h2><i class="fa-solid fa-globe"></i> Comunidad UTCJ</h2>
+                <div class="carousel">
+                    <a href="https://www.utcj.edu.mx/" target="_blank" class="news-card">
+                        <div class="news-content" style="background: var(--accent-color); color: #000; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <h3 style="text-align: center; font-size: 1.1rem; margin: 0;"><i class="fa-solid fa-building-columns"></i><br><br>Sitio Oficial UTCJ</h3>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/SOYUTCJ" target="_blank" class="news-card">
+                        <div class="news-content" style="background: #1877F2; color: white; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <h3 style="text-align: center; font-size: 1.1rem; margin: 0;"><i class="fa-brands fa-facebook"></i><br><br>Facebook #SoyUTCJ</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="glass-card weather-card">
+                <div class="weather-header">
+                    <h2><i class="fa-solid fa-cloud-sun"></i> Clima Actual</h2>
+                </div>
+                <div id="weather-info" class="weather-content">
+                    <i class="fa-solid fa-location-dot bounce"></i> Localizando...
+                </div>
+            </section>
+
+            <section class="glass-card portals-card">
+                <h2><i class="fa-solid fa-link"></i> Accesos Rápidos</h2>
+                <div class="portal-grid">
+                    <a href="https://sise.utcj.edu.mx/Login.aspx?ReturnUrl=%2fLogin.aspx" target="_blank" class="glass-btn">
+                        <i class="fa-solid fa-laptop-file"></i><span>SISE</span>
+                    </a>
+                    <a href="https://login.utcj.edu.mx/adfs/ls/?wa=wsignin1.0&wtrealm=urn%3Afederation%3AMicrosoftOnline" target="_blank" class="glass-btn">
+                        <i class="fa-brands fa-microsoft"></i><span>Correo MS</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="glass-card portals-card">
+                <h2><i class="fa-solid fa-building-user"></i> Información Institucional</h2>
+                <div class="portal-grid">
+                    <a href="https://www.utcj.edu.mx/calendario-escolar/" target="_blank" class="glass-btn">
+                        <i class="fa-regular fa-calendar-days"></i><span>Calendario</span>
+                    </a>
+                    <a href="https://www.utcj.edu.mx/directorio-institucional/" target="_blank" class="glass-btn">
+                        <i class="fa-solid fa-address-book"></i><span>Directorio</span>
+                    </a>
+                    <a href="https://stut-cj.webnode.es/" target="_blank" class="glass-btn" style="grid-column: span 2;">
+                        <i class="fa-solid fa-handshake"></i><span>Sindicato STUT-CJ</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <button id="chat-fab" onclick="toggleChat()">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+    <div id="floating-chat-window" class="glass-card hidden">
+        <div class="chat-header">
+            <h3><i class="fa-solid fa-robot"></i> ToroBot Virtual</h3>
+            <button class="close-chat" onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="chat-box" class="custom-scrollbar">
+            <div class="message bot">¡Hola Toro! 🐂 ¿En qué te puedo ayudar hoy?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe aquí...">
+            <button onclick="sendMessage()" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
